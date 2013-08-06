@@ -1,0 +1,15 @@
+{% if page.picture-path != null %}
+  {% capture picturePath %}{{page.picture-path}}{% endcapture %}
+{% else if item.picture-path != null %}
+  {% capture picturePath %}{{item.picture-path}}{% endcapture %}
+{% endif %}
+
+<img          alt="{{ pic.label }} - {{ pic.caption }}"
+       data-small="{{picturePath}}/{{pic.filename}}-small.{{pic.ext}}"
+      data-medium="{{picturePath}}/{{pic.filename}}-medium.{{pic.ext}}"
+       data-large="{{picturePath}}/{{pic.filename}}-large.{{pic.ext}}"
+  data-extralarge="{{picturePath}}/{{pic.filename}}-extralarge.{{pic.ext}}" />
+  
+<noscript>
+  <img src="{{picturePath}}/{{pic.filename}}-medium.{{pic.ext}}" alt="{{ pic.label }} - {{ pic.caption }}" />
+</noscript>

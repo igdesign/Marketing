@@ -1,0 +1,113 @@
+.nav-input, .nav-input__icon {
+  display: none;
+}
+
+.nav {
+  list-style: none;
+  @extend %zero;
+  
+  li {
+    display: inline-block;
+  }
+}
+
+.main-site-nav {
+   @extend %box-sizing;
+  
+  .main-site-nav__header {
+    @extend %hide-screen;
+    @extend %zero;
+  }
+  
+  .main-site-nav__menu {
+    
+    li {      
+      @include breakpoint($bp3, max-width) {
+        display: inherit;        
+      }
+    }
+    
+    a {
+      display: block;
+      -webkit-transition: padding $transitionSpeed ease-in-out;
+         -moz-transition: padding $transitionSpeed ease-in-out;
+           -o-transition: padding $transitionSpeed ease-in-out;
+              transition: padding $transitionSpeed ease-in-out;
+            
+    }
+  }
+}
+
+@include breakpoint($bp3, min-width) {
+  .main-site-nav {
+    
+    .main-site-nav__menu {
+      display: table;
+      width: 100%;
+      
+      li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+        
+        a {
+          white-space: nowrap;
+          
+          &:hover {
+            padding-left: 0;
+          }
+          
+          i {
+            display: block;
+            width: 100%;
+          }  
+        }  
+      }
+    }
+  }
+}
+
+@include breakpoint($bp3, max-width) {
+  .main-site-nav {
+    position: fixed;
+    top: 0;
+    left: -$navMenuWidth;
+    bottom: 0;
+    width: $navMenuWidth;
+    z-index: 3;
+    overflow: hidden;
+  }
+
+  .main-site-nav,
+  .nav-input__icon {
+    -webkit-transition: left $transitionSpeed ease-in-out;
+       -moz-transition: left $transitionSpeed ease-in-out;
+  }
+  
+  .nav-input__icon {
+    position: absolute;
+    display: inline;
+    text-align: center;
+    z-index: 1;
+    
+    i {
+      display: block;
+      width: 26px;
+      height: 26px;
+            
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+    
+  .nav-input:checked {
+    & ~ .main-site-nav {
+      left: 0;
+    }
+    
+    & ~ .nav-input__icon {
+      left:  $navMenuWidth;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# Dev stuff
+markdown:  rdiscount
+safe:      true
+lsi:       false
+pygments:  true
+host:      0.0.0.0
+port:      4000
+
+
+# Site stuff
+permalink: /:title
+charset:   utf-8
+baseurl:   /
+url:       http://igdesign.ca
+
+# Specific stuff
+version:      0.0.1
+date:         2013-08-05
+language:     en-GB
+license:      v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+name:         iG Design & Publishing
+name_short:   ig
+name_safe:    igdesign
+tagline:      ""
+color:        #D83434
+email:        design@insidegolf.ca
+copyright:    © 2013 iG Design & Publishing. All rights reserved.
+google:       UA-XXXXXXXX-X
+creator:      Gregory Daynes
+publisher:    http://twitter.com/gregdaynes
+keywords:     list, of, keywords
+description:  description of site
+twitter:      igdesign
+twitter_card: summary

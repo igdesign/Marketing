@@ -1,0 +1,31 @@
+---
+---
+{% include document/doctype.html %}
+{% include document/license.html %}
+{% include document/conditional.html %}
+{% include document/head.html %}
+
+<body class="{{page.page}}">
+
+  <div class="page-wrapper">
+  
+  <input type="checkbox" name="handler" id="handler" class="nav-input" onclick="null" />
+  
+  <label for="handler" class="nav-input__icon" href="#">
+    <i class="icon icon--right icon--light"></i>
+  </label>
+  
+  
+  {% include layout/header.html %}
+  
+  {% include layout/nav.html %}
+    
+  {{content}}
+      
+  {% include layout/footer.html %}
+  
+  </div>
+  
+  {% include document/scripts.html %}
+  
+  {% include document/analytics.html %}
