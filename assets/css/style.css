@@ -23,7 +23,7 @@
 /*--------------------*\
   Colors
 \*--------------------*/
-fieldset, .header h1, .products, .nav, .main-site-nav .main-site-nav__header {
+fieldset, .header h1, .products, .contact .contact-list, .nav, .main-site-nav .main-site-nav__header {
   /*--------------------*\
     Malarky/Rock-Hammer
     
@@ -48,7 +48,7 @@ input[type="radio"], .main-site-nav {
   box-sizing: border-box;
   /* Chrome, IE 8+, Opera, Safari 5.1 */ }
 
-.main-site-nav .main-site-nav__header {
+.footer .footer-header, .contact .contact-header, .main-site-nav .main-site-nav__header {
   /*--------------------*\
     
     
@@ -515,6 +515,9 @@ body {
   padding: 0 10px; }
 
 .products {
+  list-style: none; }
+
+.contact .contact-list {
   list-style: none; }
 
 /*----------------------------------------------------------------------------*\

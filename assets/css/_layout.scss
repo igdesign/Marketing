@@ -6,9 +6,17 @@ body {
   padding: 0 10px;
 }
 
+// layout-header
 .header {  
   h1 {
     @extend %zero;
+  }
+}
+
+// layout-footer
+.footer {
+  .footer-header {
+    @extend %hide-screen;  
   }
 }
 
@@ -16,4 +24,15 @@ body {
 .products {
   @extend %zero;
   list-style: none;
+}
+
+// module-contact
+.contact {
+  .contact-header {
+    @extend %hide-screen;
+  }
+  .contact-list {
+    list-style: none;
+    @extend %zero;
+  }
 }
