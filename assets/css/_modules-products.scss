@@ -1,0 +1,11 @@
+.products {
+  @extend %list-style-none;
+  @extend %grid;
+}
+
+.products__item {
+  margin-bottom: 10px;
+  
+  @extend %grid__item;
+  @extend %bp3--third;
+}

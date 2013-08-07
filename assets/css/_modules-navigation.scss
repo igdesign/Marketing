@@ -3,13 +3,24 @@
 }
 
 .nav {
-  list-style: none;
-  @extend %zero;
+  @extend %list-style-none;
   
   li {
     display: inline-block;
   }
 }
+
+.nav-input__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  .icon {
+    background-color: $white;
+    display: block;
+  }
+}
+
 
 .main-site-nav {
    @extend %box-sizing;

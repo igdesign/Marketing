@@ -23,7 +23,8 @@
 /*--------------------*\
   Colors
 \*--------------------*/
-fieldset, .header h1, .products, .contact .contact-list, .nav, .main-site-nav .main-site-nav__header {
+.nav, .digital-magazines, .specs, .products, .contact-list, .contact-list__item .social, fieldset, .header .site-logo__sitename,
+.header .site-logo__tagline, .footer .copyright, .main-site-nav .main-site-nav__header {
   /*--------------------*\
     Malarky/Rock-Hammer
     
@@ -34,8 +35,14 @@ fieldset, .header h1, .products, .contact .contact-list, .nav, .main-site-nav .m
   margin: 0;
   padding: 0; }
 
-input[type="checkbox"],
-input[type="radio"], .main-site-nav {
+.nav, .digital-magazines, .specs, .products, .contact-list, .contact-list__item .social {
+  /*--------------------*\
+    @extend %list-style-none
+  \*--------------------*/
+  list-style: none; }
+
+.products__item, .contact-list__item, .contact-list__item .telephone, .contact-list__item .adr, input[type="checkbox"],
+input[type="radio"], .header, .main-site-nav {
   /*--------------------*\
     CSS3Please.com + Everyone
     
@@ -48,7 +55,8 @@ input[type="radio"], .main-site-nav {
   box-sizing: border-box;
   /* Chrome, IE 8+, Opera, Safari 5.1 */ }
 
-.footer .footer-header, .contact .contact-header, .main-site-nav .main-site-nav__header {
+.header .site-logo__sitename,
+.header .site-logo__tagline, .footer .footer-header, .main-site-nav .main-site-nav__header, .contact .contact-header {
   /*--------------------*\
     
     
@@ -63,6 +71,29 @@ input[type="radio"], .main-site-nav {
   border: 0;
   display: block; }
 
+.products, .contact-list {
+  list-style: none;
+  margin-left: -24px; }
+
+.products__item, .contact-list__item, .contact-list__item .telephone, .contact-list__item .adr {
+  display: inline-block;
+  /* [1] */
+  padding-left: 24px;
+  /* [2] */
+  vertical-align: top;
+  /* [3] */
+  width: 100%;
+  /* [4] */ }
+
+@media only screen and (min-width: 37.5em) {
+  .contact-list__item:first-of-type {
+    width: 100%; }
+
+  .products__item, .contact-list__item .telephone, .contact-list__item .adr {
+    width: 33.333%; }
+
+  .contact-list__item {
+    width: 25%; } }
 /*--------------------*\
   Styles
 \*--------------------*/
@@ -514,11 +545,28 @@ th {
 body {
   padding: 0 10px; }
 
-.products {
-  list-style: none; }
+.header {
+  margin: 0 -10px 0 -10px; }
+  .header .site-logo__sitename,
+  .header .site-logo__tagline {
+    height: 100px; }
 
-.contact .contact-list {
-  list-style: none; }
+.footer {
+  background-color: #354254;
+  text-align: center;
+  /*--------------------*\
+    rem for browsers with support
+    px for ones without
+    
+    @include font-size(integer)
+  \*--------------------*/
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 -10px 0 -10px; }
+
+.footer .footer__menu {
+  text-decoration: none; }
 
 /*----------------------------------------------------------------------------*\
   Modules
@@ -526,10 +574,16 @@ body {
 .nav-input, .nav-input__icon {
   display: none; }
 
-.nav {
-  list-style: none; }
-  .nav li {
-    display: inline-block; }
+.nav li {
+  display: inline-block; }
+
+.nav-input__icon {
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .nav-input__icon .icon {
+    background-color: white;
+    display: block; }
 
 .main-site-nav .main-site-nav__menu li {
   /*--------------------*\
@@ -603,6 +657,58 @@ body {
     left: 0; }
   .nav-input:checked ~ .nav-input__icon {
     left: 90%; } }
+.products__item {
+  margin-bottom: 10px; }
+
+.contact-list__item {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #5c7393;
+  font-weight: 200;
+  /*--------------------*\
+    rem for browsers with support
+    px for ones without
+    
+    @include font-size(integer)
+  \*--------------------*/
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.6; }
+  .contact-list__item a {
+    color: #7e92ae; }
+  .contact-list__item .telephone .tel {
+    display: block; }
+  .contact-list__item .adr .type {
+    display: block; }
+  .contact-list__item .social li {
+    display: inline-block; }
+  .contact-list__item .fn {
+    /*--------------------*\
+      rem for browsers with support
+      px for ones without
+      
+      @include font-size(integer)
+    \*--------------------*/
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    display: block; }
+  .contact-list__item .role {
+    font-style: italic; }
+
+.welcome-page {
+  background-image: url(../img/NSTexturedFullScreenBackgroundColor.png); }
+  .welcome-page .header {
+    background-color: black;
+    padding: 10px 0; }
+  .welcome-page .site-logo {
+    background-image: url(../img/IG2013-LOGO.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 0 5%; }
+
 @media print {
   * {
     background: transparent !important;

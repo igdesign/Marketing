@@ -77,7 +77,7 @@ Inside Golf's Canadian Golf Traveller has information on every course from BC to
 
 #### Each issue of Inside Golf is release as a digital version along side of the print version.
 
-{% include partial/digital-magazines.html %}
+{% include partial/inside-golf_digital-magazines.html %}
 
 ---
 

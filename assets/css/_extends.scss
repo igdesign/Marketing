@@ -34,6 +34,18 @@
 
 
 
+%list-style-none {
+  /*--------------------*\
+    @extend %list-style-none
+  \*--------------------*/
+  
+  @extend %zero;
+  list-style: none;
+}
+
+
+
+
 %clearfix {
   /*--------------------*\
     For modern browsers

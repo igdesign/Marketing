@@ -11,7 +11,7 @@ port:      4000
 permalink: /:title
 charset:   utf-8
 baseurl:   /
-url:       http://igdesign.ca
+url:       http://localhost:4000
 
 # Specific stuff
 version:      0.0.1

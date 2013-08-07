@@ -1,0 +1,18 @@
+.welcome-page {
+  background-image: url(../img/NSTexturedFullScreenBackgroundColor.png);
+  
+  .header {
+    background-color: $black;
+    padding: 10px 0;
+    
+  }
+  
+  .site-logo {
+    background-image: url(../img/IG2013-LOGO.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 0 5%;
+  }
+}

@@ -7,32 +7,35 @@ body {
 }
 
 // layout-header
-.header {  
-  h1 {
+.header {
+  @extend %box-sizing;
+  margin: 0 -10px 0 -10px;
+  
+  .site-logo__sitename,
+  .site-logo__tagline {
     @extend %zero;
+    @extend %hide-screen;
+    height: 100px;    
   }
 }
 
 // layout-footer
 .footer {
-  .footer-header {
-    @extend %hide-screen;  
-  }
+  background-color: $neutralcolor;
+  text-align: center;
+  @include font-size(12);
+  margin: 0 -10px 0 -10px;
+  
 }
 
-// module-products
-.products {
+.footer .footer-header {
+  @extend %hide-screen;
+}
+
+.footer .copyright {
   @extend %zero;
-  list-style: none;
 }
 
-// module-contact
-.contact {
-  .contact-header {
-    @extend %hide-screen;
-  }
-  .contact-list {
-    list-style: none;
-    @extend %zero;
-  }
+.footer .footer__menu {
+  text-decoration: none;
 }
